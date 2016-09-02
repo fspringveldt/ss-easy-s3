@@ -121,7 +121,7 @@
 				//Build it up from the info we have
 				$protocol = Director::is_https() ? 'https://' : 'http://';
 				$region = 's3-'.$this->getRegion();//@todo remove hard coded s3-
-				$url = sprintf('%s%s.amazonaws.com/%s/', $protocol, $region, $this->getBucket());
+				$url = sprintf('%s%s.amazonaws.com/%s', $protocol, $region, $this->getBucket());
 			}
 
 			return $url;
