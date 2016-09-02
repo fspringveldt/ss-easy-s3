@@ -95,7 +95,7 @@
 			{
 				$cfg = Config::inst()
 							 ->get('S3Facade', 'config');
-				$this->s3Config = array_key_exists($cfg, Director::get_environment_type()) ? $cfg[Director::get_environment_type()] : array();
+				$this->s3Config = array_key_exists(Director::get_environment_type(),$cfg) ? $cfg[Director::get_environment_type()] : array();
 			}
 
 			return $this->s3Config;
