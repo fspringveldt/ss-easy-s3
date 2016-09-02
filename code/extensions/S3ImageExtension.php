@@ -16,7 +16,7 @@
 		 * Injected facade
 		 * @var S3Facade
 		 */
-		public $s3facade;
+		public $s3Facade;
 		/**
 		 * Mechanism to avoid endless loop of afterWrite calls
 		 * @var bool
@@ -67,11 +67,11 @@
 			//See if we should write it to S3. Do so if we must
 			if($this->owner->SyncToS3 && $this->skipAfterWrite == false)
 			{
-				$client = $this->s3facade->setupS3Client();
+				$client = $this->s3Facade->setupS3Client();
 				try
 				{
 					//@todo Only update if file content changes, not always
-					$bucket = $this->s3facade->getBucket();
+					$bucket = $this->s3Facade->getBucket();
 					$key = $this->owner->getFilename();
 					$acl = 'public-read';
 					$putInfo = array(
@@ -88,7 +88,7 @@
 					$this->owner->S3FileURL = $result['ObjectURL'];
 					$this->skipAfterWrite = true;
 					$this->owner->write();
-					$this->s3facade->InvalidateCache($key);
+					$this->s3Facade->InvalidateCache($key);
 
 				}catch(\Aws\S3\Exception\S3Exception $e)
 				{
@@ -106,8 +106,8 @@
 		public function onAfterDelete()
 		{
 			parent::onAfterDelete();
-			$client = $this->s3facade->setupS3Client();
-			$bucket = $this->s3facade->getBucket();
+			$client = $this->s3Facade->setupS3Client();
+			$bucket = $this->s3Facade->getBucket();
 			$key = $this->owner->getFilename();
 			$objExists = $client->doesObjectExist($bucket, $key);
 			if($objExists)
@@ -120,7 +120,7 @@
 				{
 					//Check if file has changed, and update if that's the case
 					$client->deleteObject($deleteInfo);
-					$this->s3facade->InvalidateCache($key);
+					$this->s3Facade->InvalidateCache($key);
 				}catch(\Aws\S3\Exception\S3Exception $e)
 				{
 					SS_Log::log($e->getMessage(), SS_Log::ERR);
