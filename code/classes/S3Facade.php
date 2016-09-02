@@ -95,7 +95,11 @@
 			{
 				$cfg = Config::inst()
 							 ->get('S3Facade', 'config');
-				$this->s3Config = array_key_exists(Director::get_environment_type(),$cfg) ? $cfg[Director::get_environment_type()] : array();
+
+				if(is_null($cfg))
+					throw new Exception('Configuration not found in any yaml file. Please check the ss-easy-s3 README.md file for how to add it.');
+
+				$this->s3Config = array_key_exists(Director::get_environment_type(), $cfg) ? $cfg[Director::get_environment_type()] : array();
 			}
 
 			return $this->s3Config;
