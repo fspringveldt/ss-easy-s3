@@ -21,6 +21,6 @@ Injector:
   S3ImageExtension:
     properties:
       s3Facade: %$S3Facade
-  S3ImageExtension:
+  S3PageExtension:
     properties:
       s3Facade: %$S3Facade
