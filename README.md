@@ -11,7 +11,7 @@ To install, run below from root of SilverStripe installation
 ```bash 
 > composer require fspringveldt/ss-easy-s3
 ``` 
-to install dependencies. Thereafter perform a flush of your website [flush-instructions]([click here for more on this](https://docs.silverstripe.org/en/3.4/developer_guides/performance/caching/#built-in-caches)) 
+http://**your-site-url**?flush=1 once composer is complete the flush the manifest.
 
 Once installed and configured, head on over to Amazon, create an account and bucket. Below are some resources you can use to assist during this process.
 
