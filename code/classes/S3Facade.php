@@ -136,19 +136,22 @@
 		{
 			$distributionID = $this->s3Config()['distribution-id'];
 
-			$cfClient = $this->setupCloudFrontClient();
-			$cfClient->createInvalidation(
-				array(
-					'DistributionId'    => $distributionID,
-					'InvalidationBatch' => array(
-						'CallerReference' => sha1(date('H:i:s')),
-						'Paths'           => array(
-							'Quantity' => 1,
-							'Items'    => array('/' . $key),
+			if(!empty($distributionID))
+			{
+				$cfClient = $this->setupCloudFrontClient();
+				$cfClient->createInvalidation(
+					array(
+						'DistributionId'    => $distributionID,
+						'InvalidationBatch' => array(
+							'CallerReference' => sha1(date('H:i:s')),
+							'Paths'           => array(
+								'Quantity' => 1,
+								'Items'    => array('/' . $key),
+							),
 						),
-					),
-				)
-			);
+					)
+				);
+			}
 		}
 
 		/**
