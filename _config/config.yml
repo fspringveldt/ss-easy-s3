@@ -1,0 +1,43 @@
+Page_Controller:
+  extensions:
+    - S3PageExtension
+Image:
+  extensions:
+    - S3ImageExtension
+S3ImageExtension:
+  config:
+    dev:
+      key:
+      secret:
+      region:
+      bucket:
+      url:
+      distribution-id:
+    test:
+      key:
+      secret:
+      region:
+      bucket:
+      url:
+      distribution-id:
+    live:
+      key:
+      secret:
+      region:
+      bucket:
+      url:
+      distribution-id:
+MigrateThemeToS3:
+  skipFoldersDuringImport: [lang,templates]
+Injector:
+  RequestProcessor:
+    properties:
+      filters:
+        - '%$ImageURLRequestFilter'
+S3Facade:
+  properties:
+    migrationFolders: [assets]
+ImageURLRequestFilter:
+  properties:
+    foldersForRewrite: ['assets/','themes/sep2015/']
+    foldersToSkipDuringRewrite: ['assets/Uploads/_resampled','assets/_resampled']

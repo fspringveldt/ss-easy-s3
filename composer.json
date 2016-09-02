@@ -1,0 +1,27 @@
+{
+  "name": "fspringveldt/ss-easy-s3",
+  "description": "Seamlessly integrates assets (including themes folder) along with css and js. Enabling CloudFront is simply a config change.",
+  "type": "silverstripe-module",
+  "homepage": "https://github.com/fspringveldt/ss-easy-s3",
+  "keywords": [
+    "silverstripe",
+    "s3-integration",
+    "amazon-s3",
+    "ss-easy-s3"
+  ],
+  "support": {
+    "issues": "https://github.com/fspringveldt/ss-easy-s3/issues"
+  },
+  "require": {
+    "php": ">=5.3.3",
+    "silverstripe/framework": "3.4.*",
+    "silverstripe/cms": "3.4.*",
+    "aws/aws-sdk-php": "3.18"
+  },
+  "authors": [
+    {
+      "name": "Franco Springveldt",
+      "email": "fspringveldt@gmail.com"
+    }
+  ]
+}
