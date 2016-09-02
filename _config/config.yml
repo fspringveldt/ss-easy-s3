@@ -18,3 +18,9 @@ Injector:
     properties:
       foldersForRewrite: ['assets/','themes/sep2015/']
       foldersToSkipDuringRewrite: ['assets/Uploads/_resampled','assets/_resampled']
+  S3ImageExtension:
+    properties:
+      s3Facade: %$S3Facade
+  S3ImageExtension:
+    properties:
+      s3Facade: %$S3Facade
