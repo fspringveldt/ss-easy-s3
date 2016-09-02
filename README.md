@@ -7,10 +7,9 @@ silverstripe/cms: ^3.4.*
 aws/aws-sdk-php: ^3.18
 ```
 ## Installation and Setup
-This is very easy. Simply following the default [module installation instructions found here](https://docs.silverstripe.org/en/3.4/developer_guides/extending/modules/#installation).
-Once installed, run 
+To install, run below from root of SilverStripe installation
 ```bash 
-> composer update
+> composer require fspringveldt/ss-easy-s3
 ``` 
 to install dependencies. Thereafter perform a flush of your website [flush-instructions]([click here for more on this](https://docs.silverstripe.org/en/3.4/developer_guides/performance/caching/#built-in-caches)) 
 
