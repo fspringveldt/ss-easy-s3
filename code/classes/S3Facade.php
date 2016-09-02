@@ -112,6 +112,12 @@
 			if(isset($cfg['url']))
 			{
 				$url = $cfg['url'];
+			}else
+			{
+				//Build it up from the info we have
+				$protocol = Director::is_https() ? 'https://' : 'http://';
+				$region = $this->getRegion();
+				$url = sprintf('%s%s.amazonaws.com/%s/', $protocol, $region, $this->getBucket());
 			}
 
 			return $url;
@@ -150,6 +156,17 @@
 			$cfg = $this->s3Config();
 
 			return $cfg['bucket'];
+		}
+
+		/**
+		 * Returns the region of the S3 bucket
+		 * @return mixed
+		 */
+		public function getRegion()
+		{
+			$cfg = $this->s3Config();
+
+			return $cfg['region'];
 		}
 
 	}

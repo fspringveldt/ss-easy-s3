@@ -34,10 +34,10 @@ Injector:
     properties:
       filters:
         - '%$ImageURLRequestFilter'
-S3Facade:
-  properties:
-    migrationFolders: [assets]
-ImageURLRequestFilter:
-  properties:
-    foldersForRewrite: ['assets/','themes/sep2015/']
-    foldersToSkipDuringRewrite: ['assets/Uploads/_resampled','assets/_resampled']
+  S3Facade:
+    properties:
+      migrationFolders: ['assets']
+  ImageURLRequestFilter:
+    properties:
+      foldersForRewrite: ['assets/','themes/sep2015/']
+      foldersToSkipDuringRewrite: ['assets/Uploads/_resampled','assets/_resampled']
