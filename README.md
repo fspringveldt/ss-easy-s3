@@ -2,8 +2,8 @@
 Seamlessly integrates assets,theme assets, css and js with S3 - with optional CloudFront CDN.
 ## Minimum requirements
 ```
-silverstripe/framework: ^3.4.* 
-silverstripe/cms: ^3.4.*
+silverstripe/framework: ^3.5.* 
+silverstripe/cms: ^3.5.*
 aws/aws-sdk-php: ^3.18
 ```
 ## Installation and Setup
