@@ -63,7 +63,7 @@ _NB: You can setup multiple configs per environment_
 This module will __automagically__ re-write all your URL's to point to the resources from either the S3 Bucket or CloudFront url you specified.
 
 ### Deleting local files
-You now also have the option to delete local files and only keep the in S3, which is switched off by default. To enable this functionality, do the following:
+You now also have the option to delete local files and only keep those in S3, which is switched off by default. To enable this functionality, do the following:
 1. Add this config entry
 ```yaml
 Image:
