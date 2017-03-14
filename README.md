@@ -70,6 +70,11 @@ Image:
     keepLocal: false
 ```
 2. Then schedule the task called RemoveLocalCopies to run at a comfortable interval to remove these files.
+An example cron entry reflects below, replacing everything in square brackets with correct values
+```bash
+*/5 * * * * [path-to-php-binary] [path-to-application]/framework/cli-script.php dev/build
+```
+An example on ubuntu: ``` */5 * * * * /usr/bin/php /var/www/example/framework/cli-script.php dev/build ```
 
 ## Migrate to S3 build-task
 There is also a handy tool which will upload entire directories to your S3 bucket blisteringly fast. You can specify which directories to upload via the [_ _config/config.yml_](_config/config.yml) file by adding more entries to the ```migrationFolders``` property. The assets folder is added by default.
