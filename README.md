@@ -18,7 +18,7 @@ Once installed and configured, head on over to Amazon, create an account and buc
 * [Using CloudFront with Amazon S3](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/MigrateS3ToCloudFront.html)
 * [Getting Started with CloudFront](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/GettingStarted.html)
 * [Syncing data with Amazon S3](http://docs.aws.amazon.com/aws-sdk-php/v2/guide/service-s3.html#syncing-data-with-amazon-s3)
-* [For S3 Regions!! - This one can get you hahaha] (http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region)
+* [For S3 Regions!! - This one can get you hahaha](http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region)
 
 
 Once your Amazon info is sorted, you'll need the following info from the Amazon console:
