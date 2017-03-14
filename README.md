@@ -61,5 +61,14 @@ _NB: You can setup multiple configs per environment_
 
 This module will __automagically__ re-write all your URL's to point to the resources from either the S3 Bucket or CloudFront url you specified.
 
+### Deleting local files
+You now also have the option to delete local files and only keep the in S3, which is switched off by default. To enable this functionality, do the following:
+1. Add this config entry
+```yaml
+Image:
+    keepLocal: false
+```
+2. Then schedule the task called RemoveLocalCopies to run at a comfortable interval to remove these files.
+
 ## Migrate to S3 build-task
 There is also a handy tool which will upload entire directories to your S3 bucket blisteringly fast. You can specify which directories to upload via the [_ _config/config.yml_](_config/config.yml) file by adding more entries to the ```migrationFolders``` property. The assets folder is added by default.
