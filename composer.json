@@ -14,8 +14,8 @@
     },
     "require": {
         "php": ">=5.3",
-        "silverstripe/framework": "3.5.*",
-        "silverstripe/cms": "3.5.*",
+        "silverstripe/framework": "^3.5",
+        "silverstripe/cms": "^3.5",
         "aws/aws-sdk-php": "3.18"
     },
     "authors": [
